@@ -13,14 +13,14 @@ export default function Form({ onClick }: { onClick: (name: string) => void }) {
   }
 
   return (
-    <>
+    <div className="row">
       <input
         type="text"
         placeholder="Name"
         value={text}
         onInput={(e) => setText(e.currentTarget.value)}
       />
-      <button onClick={() => onSubmit()}>Hola Xoaco</button>
-    </>
+      <button onClick={() => onSubmit()}>Add</button>
+    </div>
   );
 }
