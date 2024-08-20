@@ -13,14 +13,16 @@ export default function Form({ onClick }: { onClick: (name: string) => void }) {
   }
 
   return (
-    <div className="row">
-      <input
-        type="text"
-        placeholder="Name"
-        value={text}
-        onInput={(e) => setText(e.currentTarget.value)}
-      />
-      <button onClick={() => onSubmit()}>Add</button>
-    </div>
+    <form className="new-item-form" onSubmit={onSubmit}>
+      <div className="form-row">
+        <input
+          type="text"
+          placeholder="Name"
+          value={text}
+          onInput={(e) => setText(e.currentTarget.value)}
+        />
+        <button className="btn">Add</button>
+      </div>
+    </form>
   );
 }

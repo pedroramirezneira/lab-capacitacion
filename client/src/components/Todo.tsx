@@ -1,4 +1,4 @@
-import { TodoData } from "./TodoData";
+import { TodoData } from "../models/TodoData";
 
 export default function Todo({
   data,
@@ -10,14 +10,14 @@ export default function Todo({
   onChecked: () => void;
 }) {
   return (
-    <div className="row">
-      <p>{data.name}</p>
-      <input
-        type="checkbox"
-        checked={data.completed}
-        onInput={() => onChecked()}
-      ></input>
-      <button onClick={() => onDelete()}>Delete</button>
-    </div>
+    <li>
+      <label>
+        <input type="checkbox" checked={data.completed} onChange={onChecked} />
+        {data.name}
+      </label>
+      <button className="btn btn-danger" onClick={() => onDelete()}>
+        Delete
+      </button>
+    </li>
   );
 }
